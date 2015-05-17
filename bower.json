@@ -1,0 +1,25 @@
+{
+  "name": "react-progress-bar-plus",
+  "version": "0.0.1",
+  "description": "Progress bar component for ReactJS.",
+  "main": "lib/ProgressBar.js",
+  "keywords": [
+    "react-component",
+    "react",
+    "component",
+    "react-progress",
+    "react-progress-bar",
+    "react-progress-bar-plus"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-customize": "~3.3.4"
+  }
+}
