@@ -1,41 +1,43 @@
-var React = require('react');
+import 'babel-core/polyfill';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Header from './components/Header.js';
+import Footer from './components/Footer.js';
+import ProgressBar from 'react-progress-bar-plus';
 
-require('./bower_components/bootstrap-customize/css/bootstrap.css');
-require('../src/progress-bar.scss');
-require('./assets/styles/app.scss');
+import './bower_components/bootstrap-customize/css/bootstrap.css';
+import 'react-progress-bar-plus/src/progress-bar.scss';
+import './assets/styles/app.scss';
 
-var Header = require('./components/Header');
-var Footer = require('./components/Footer');
-var ProgressBar = require('../src/ProgressBar');
+class App extends React.Component {
+  state = {
+    percent: -1,
+    autoIncrement: false,
+    intervalTime: 200
+  };
 
-var App = React.createClass({
-  getInitialState: function () {
-    return {
-      percent: -1,
-      autoIncrement: false,
-      intervalTime: 200
-    };
-  },
-  setPercent: function (percent) {
-    return function () {
+  setPercent = (percent) => {
+    return () => {
       this.setState({
         percent: percent
       });
-    }.bind(this);
-  },
-  startWithAutoIncrement: function () {
+    };
+  };
+
+  startWithAutoIncrement = () => {
     this.setState({
       percent: 0,
       autoIncrement: true,
       intervalTime: (Math.random() * 1000)
     });
-  },
-  render: function () {
+  };
+
+  render() {
     return (
-      <div className={'layout-page'}>
+      <div className='layout-page'>
         <Header/>
-        <main className={'layout-main'}>
-          <div className={'container'}>
+        <main className='layout-main'>
+          <div className='container'>
             <ProgressBar percent={this.state.percent}
               autoIncrement={this.state.autoIncrement}
               intervalTime={this.state.intervalTime}/>
@@ -86,7 +88,14 @@ var App = React.createClass({
       </div>
     );
   }
-});
+}
 
-React.render(<App />, document.body);
+function run() {
+  ReactDOM.render(<App />, document.getElementById('app'));
+}
 
+if (window.addEventListener) {
+  window.addEventListener('DOMContentLoaded', run);
+} else {
+  window.attachEvent('onload', run);
+}

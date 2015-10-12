@@ -25,8 +25,7 @@
   width: 100%;
   visibility: visible;
   opacity: 1;
-  -webkit-transition: all 400ms;
-          transition: all 400ms;
+  transition: all 400ms;
   z-index: 9999999;
 }
 
@@ -48,8 +47,7 @@
   height: 2px;
   background: #29D;
   box-shadow: 0 0 10px #29D, 0 0 5px #29D;
-  -webkit-transition: all 200ms ease;
-          transition: all 200ms ease;
+  transition: all 200ms ease;
   width: 5px;
 }
 

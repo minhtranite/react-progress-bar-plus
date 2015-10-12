@@ -1,8 +1,8 @@
 {
   "name": "react-progress-bar-plus",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Progress bar component for ReactJS.",
-  "main": "lib/ProgressBar.js",
+  "main": "lib/index.js",
   "keywords": [
     "react-component",
     "react",
@@ -19,6 +19,7 @@
     "test",
     "tests"
   ],
+  "dependencies": {},
   "devDependencies": {
     "bootstrap-customize": "~3.3.4"
   }

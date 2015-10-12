@@ -17,8 +17,6 @@ npm install --save react-progress-bar-plus
 ```js
 var ProgressBar = require('react-progress-bar-plus');
 
-var percent = 0;
-
 <ProgressBar percent={10}/>
 ```
 
@@ -40,7 +38,7 @@ require('react-progress-bar-plus/lib/progress-bar.css');
 | Name | Type | Default | Description |
 |------|------|---------|-------------|
 | percent | number | -1 | Progress percent |
-| onTop | bool | false | Progrees bar will ontop & height 100% |
+| onTop | bool | false | Progress bar will ontop & height 100% |
 | autoIncrement | bool | false | if `true` percent will auto increment `Math.random() + 1 - Math.random()`% in `intervalTime` ms. |
 | intervalTime | number | 200 | Interval time for auto increment. |
 
