@@ -1,0 +1,1 @@
+{"errors":[],"warnings":[],"version":"1.12.2","publicPath":"","assetsByChunkName":{"app":"6e0f75ac3bd0063e69bf.js"},"assets":[{"name":"3d593052bb2819bdf7709d9f7e512c8f.svg","size":1837,"chunks":[],"chunkNames":[],"emitted":true},{"name":"6e0f75ac3bd0063e69bf.js","size":305787,"chunks":[0],"chunkNames":["app"],"emitted":true}]}
