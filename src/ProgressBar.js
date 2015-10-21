@@ -71,7 +71,7 @@ class ProgressBar extends React.Component {
       <div className={className}>
         <div className='react-progress-bar-percent' style={style}/>
         <div className='react-progress-bar-spinner'>
-          <div className='react-progress-bar-spinner-icon'></div>
+          <div className='react-progress-bar-spinner-icon'/>
         </div>
       </div>
     );
