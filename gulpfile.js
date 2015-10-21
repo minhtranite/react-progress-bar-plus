@@ -8,17 +8,19 @@ var babel = require('gulp-babel');
 var sass = require('gulp-sass');
 var filter = require('gulp-filter');
 var autoprefixer = require('gulp-autoprefixer');
+var minifyCss = require('gulp-minify-css');
 var runSequence = require('run-sequence');
 var webpackStatsHelper = require('./example/helper/webpack-stats-helper');
 var path = require('path');
 var frep = require('gulp-frep');
 var minifyHtml = require('gulp-minify-html');
 var webpackStream = require('webpack-stream');
-var webpackConfig = require('./example/webpack.build.config');
+var webpackConfig = require('./webpack.config');
+var exampleWebpackConfig = require('./example/webpack.build.config');
 var webpack = require('webpack');
 
 gulp.task('clean', function () {
-  del.sync(['lib']);
+  del.sync(['lib', 'dist']);
 });
 
 gulp.task('lint', function () {
@@ -29,12 +31,18 @@ gulp.task('lint', function () {
     .pipe(eslint.failOnError());
 });
 
-
 gulp.task('babel', function () {
   return gulp
     .src(['src/**/*.js'])
     .pipe(babel())
     .pipe(gulp.dest('lib'));
+});
+
+gulp.task('umd', function () {
+  return gulp
+    .src(['src/index.js'])
+    .pipe(webpackStream(webpackConfig, webpack))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('sass', function () {
@@ -56,17 +64,20 @@ gulp.task('sass', function () {
         'bb >= 10'
       ]
     }))
-    .pipe(gulp.dest('lib'));
+    .pipe(gulp.dest('lib'))
+    .pipe(minifyCss())
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('copy', function () {
   return gulp
     .src(['src/**/*', '!src/**/*.{scss,js}'])
-    .pipe(gulp.dest('lib'));
+    .pipe(gulp.dest('lib'))
+    .pipe(gulp.dest('dist'));
 });
 
 gulp.task('build:lib', function (callback) {
-  runSequence('clean', 'lint', 'babel', 'sass', 'copy', callback);
+  runSequence('clean', 'lint', 'babel', 'umd', 'sass', 'copy', callback);
 });
 
 
@@ -77,7 +88,7 @@ gulp.task('example:clean', function () {
 gulp.task('example:webpack', function () {
   return gulp
     .src(['example/app/app.js'])
-    .pipe(webpackStream(webpackConfig, webpack))
+    .pipe(webpackStream(exampleWebpackConfig, webpack))
     .pipe(gulp.dest('example/dist'));
 });
 

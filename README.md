@@ -6,8 +6,14 @@ Progress bar component for ReactJS.
 
 ## Installation
 
+### NPM
 ```bash
 npm install --save react-progress-bar-plus
+```
+
+### Bower
+```bash
+bower install --save react-progress-bar-plus
 ```
 
 ## Usage
@@ -33,6 +39,21 @@ require('react-progress-bar-plus/lib/progress-bar.css');
 ```html
 <link rel="stylesheet" type="text/css" href="path/to/react-progress-bar-plus/lib/progress-bar.css">
 ```
+
+### UMD
+
+```html
+<link rel="stylesheet" type="text/css" href="path/to/react-progress-bar-plus/dist/progress-bar.css">
+<script src="path/to/react-progress-bar-plus/dist/react-progress-bar-plus.js"></script>
+```
+
+```js
+...
+var ProgressBar = window.ReactProgressBarPlus;
+...
+```
+
+Example [here](http://codepen.io/vn38minhtran/pen/QjaZrm)
 
 ## Props
 | Name | Type | Default | Description |
