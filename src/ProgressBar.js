@@ -49,7 +49,7 @@ class ProgressBar extends React.Component {
       }, () => {
         setTimeout(() => {
           this.setState({
-            percent: 100
+            percent: -1
           });
         }, 400);
       });
@@ -66,7 +66,7 @@ class ProgressBar extends React.Component {
       'react-progress-bar-on-top': this.props.onTop,
       'react-progress-bar-hide': this.state.percent < 0 || this.state.percent >= 100
     });
-    let style = {width: this.state.percent + '%'};
+    let style = {width: (this.state.percent < 0 ? 0 : this.state.percent) + '%'};
     return (
       <div className={className}>
         <div className='react-progress-bar-percent' style={style}/>
