@@ -32,11 +32,17 @@ class ProgressBar extends React.Component {
     if (this.interval) {
       clearInterval(this.interval);
     }
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
   };
 
   componentWillReceiveProps = (nextProps) => {
     if (this.interval) {
       clearInterval(this.interval);
+    }
+    if (this.timeout) {
+      clearTimeout(this.timeout);
     }
 
     if (nextProps.autoIncrement && nextProps.percent >= 0 && nextProps.percent < 99) {
@@ -47,7 +53,7 @@ class ProgressBar extends React.Component {
       this.setState({
         percent: 99.9
       }, () => {
-        setTimeout(() => {
+        this.timeout = setTimeout(() => {
           this.setState({
             percent: -1
           });
