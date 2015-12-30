@@ -4,7 +4,6 @@ import ProgressBar from 'react-progress-bar-plus';
 class Example1 extends React.Component {
   state = {
     percent: -1,
-    autoIncrement: false,
     intervalTime: 200
   };
 
@@ -19,7 +18,6 @@ class Example1 extends React.Component {
   start = () => {
     this.setState({
       percent: 0,
-      autoIncrement: true,
       intervalTime: (Math.random() * 1000)
     });
   };
@@ -28,7 +26,7 @@ class Example1 extends React.Component {
     return (
       <div>
         <ProgressBar percent={this.state.percent}
-          autoIncrement={this.state.autoIncrement}
+          autoIncrement={true}
           intervalTime={this.state.intervalTime}/>
 
         <div className='text-center'>

@@ -28,28 +28,12 @@ class ProgressBar extends React.Component {
     });
   };
 
-  componentWillUnmount = () => {
-    if (this.interval) {
-      clearInterval(this.interval);
-    }
-    if (this.timeout) {
-      clearTimeout(this.timeout);
-    }
-  };
-
-  componentWillReceiveProps = (nextProps) => {
-    if (this.interval) {
-      clearInterval(this.interval);
-    }
-    if (this.timeout) {
-      clearTimeout(this.timeout);
+  handleProps = (props) => {
+    if (props.autoIncrement && props.percent >= 0 && props.percent < 99) {
+      this.interval = setInterval(this.increment, props.intervalTime);
     }
 
-    if (nextProps.autoIncrement && nextProps.percent >= 0 && nextProps.percent < 99) {
-      this.interval = setInterval(this.increment, nextProps.intervalTime);
-    }
-
-    if (nextProps.percent >= 100) {
+    if (props.percent >= 100) {
       this.setState({
         percent: 99.9
       }, () => {
@@ -61,8 +45,31 @@ class ProgressBar extends React.Component {
       });
     } else {
       this.setState({
-        percent: nextProps.percent
+        percent: props.percent
       });
+    }
+  };
+
+  componentDidMount = () => {
+    this.handleProps(this.props);
+  };
+
+  componentWillReceiveProps = (nextProps) => {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+    if (this.timeout) {
+      clearTimeout(this.timeout);
+    }
+    this.handleProps(nextProps);
+  };
+
+  componentWillUnmount = () => {
+    if (this.interval) {
+      clearInterval(this.interval);
+    }
+    if (this.timeout) {
+      clearTimeout(this.timeout);
     }
   };
 
