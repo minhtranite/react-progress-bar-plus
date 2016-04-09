@@ -1,6 +1,6 @@
 {
   "name": "react-progress-bar-plus",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "Progress bar component for ReactJS.",
   "main": "lib/index.js",
   "scripts": {
