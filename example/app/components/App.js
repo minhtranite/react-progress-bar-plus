@@ -9,10 +9,10 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className='layout-page'>
+      <div className="layout-page">
         <Header/>
-        <main className='layout-main'>
-          <div className='container'>
+        <main className="layout-main">
+          <div className="container">
             {this.props.children}
           </div>
         </main>

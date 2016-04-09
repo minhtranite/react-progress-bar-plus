@@ -2,9 +2,10 @@ import React from 'react';
 import Document from 'components/common/Document';
 import ProgressBar from 'react-progress-bar-plus';
 
-class PageHome extends React.Component {
+class PageExample1 extends React.Component {
   state = {
-    percent: -1
+    percent: -1,
+    intervalTime: 200
   };
 
   setPercent = (percent) => {
@@ -15,14 +16,28 @@ class PageHome extends React.Component {
     };
   };
 
+  start = () => {
+    this.setState({
+      percent: 0,
+      intervalTime: (Math.random() * 1000)
+    });
+  };
+
   render() {
     return (
-      <Document title="Home | React progress bar plus" className="page-home">
+      <Document title="Auto increment | React progress bar plus"
+        className="page-auto-increment">
         <div>
-          <ProgressBar percent={this.state.percent}/>
+          <ProgressBar percent={this.state.percent}
+            autoIncrement={true}
+            intervalTime={this.state.intervalTime}/>
+
           <div className="text-center">
+            <h4>
+              Current intervalTime: <code>{this.state.intervalTime}</code>
+            </h4>
             <div className="btn-group">
-              <button className="btn btn-default" onClick={this.setPercent(0)}>
+              <button className="btn btn-default" onClick={this.start}>
                 Start
               </button>
               <button className="btn btn-default" onClick={this.setPercent(25)}>
@@ -46,4 +61,5 @@ class PageHome extends React.Component {
   }
 }
 
-export default PageHome;
+export default PageExample1;
+

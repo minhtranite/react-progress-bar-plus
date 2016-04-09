@@ -1,5 +1,5 @@
 import React from 'react';
-import ClassNames from 'classnames';
+import classnames from 'classnames';
 
 class ProgressBar extends React.Component {
   static propTypes = {
@@ -74,7 +74,7 @@ class ProgressBar extends React.Component {
   };
 
   render() {
-    let className = ClassNames({
+    let className = classnames({
       'react-progress-bar': true,
       'react-progress-bar-on-top': this.props.onTop,
       'react-progress-bar-hide': this.state.percent < 0 || this.state.percent >= 100
@@ -82,9 +82,9 @@ class ProgressBar extends React.Component {
     let style = {width: (this.state.percent < 0 ? 0 : this.state.percent) + '%'};
     return (
       <div className={className}>
-        <div className='react-progress-bar-percent' style={style}/>
-        <div className='react-progress-bar-spinner'>
-          <div className='react-progress-bar-spinner-icon'/>
+        <div className="react-progress-bar-percent" style={style}/>
+        <div className="react-progress-bar-spinner">
+          <div className="react-progress-bar-spinner-icon"/>
         </div>
       </div>
     );

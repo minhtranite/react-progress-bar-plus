@@ -6,23 +6,23 @@ const logo = require('../assets/images/logo.svg');
 class Header extends React.Component {
   render() {
     return (
-      <header className='layout-header'>
-        <nav className='navbar navbar-inverse'>
-          <div className='container'>
-            <div className='navbar-header'>
-              <button type='button' className='navbar-toggle collapsed'>
-                <span className='sr-only'>Toggle navigation</span>
-                <span className='icon-bar'/>
-                <span className='icon-bar'/>
-                <span className='icon-bar'/>
+      <header className="layout-header">
+        <nav className="navbar navbar-inverse">
+          <div className="container">
+            <div className="navbar-header">
+              <button type="button" className="navbar-toggle collapsed">
+                <span className="sr-only">Toggle navigation</span>
+                <span className="icon-bar"/>
+                <span className="icon-bar"/>
+                <span className="icon-bar"/>
               </button>
-              <Link className='navbar-brand' to='/'>
-                <img width='20' src={logo}/>
+              <Link className="navbar-brand" to="/">
+                <img width="20" src={logo}/>
               </Link>
             </div>
-            <div className='collapse navbar-collapse'>
-              <ul className='nav navbar-nav navbar-right'>
-                <li><Link to='/ex-1'>Auto increment</Link></li>
+            <div className="collapse navbar-collapse">
+              <ul className="nav navbar-nav navbar-right">
+                <li><Link to="/auto-increment">Auto increment</Link></li>
               </ul>
             </div>
           </div>
