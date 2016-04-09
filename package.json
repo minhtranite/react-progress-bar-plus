@@ -16,7 +16,7 @@
     "react-progress-bar-plus"
   ],
   "peerDependencies": {
-    "react": "0.13 - 0.14"
+    "react": "^0.13 || ^0.14 || ^15.0.0"
   },
   "dependencies": {
     "classnames": "^2.1.5"
@@ -55,7 +55,7 @@
     "node-sass": "^3.4.2",
     "opn": "^4.0.0",
     "postcss-loader": "^0.8.0",
-    "react-dom": "^0.14.3",
+    "react-dom": "^0.13 || ^0.14 || ^15.0.0",
     "react-router": "^2.0.0",
     "react-transform-hmr": "^1.0.1",
     "run-sequence": "^1.1.5",

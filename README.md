@@ -66,3 +66,7 @@ Example [here](http://codepen.io/vn38minhtran/pen/QjaZrm)
 ## Example
 
 View [demo](http://vn38minhtran.github.io/react-progress-bar-plus) or example folder.
+
+## License
+
+MIT Licensed. Copyright (c) Minh Tran 2016.
