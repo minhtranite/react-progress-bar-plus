@@ -6,14 +6,16 @@ class ProgressBar extends React.Component {
     percent: React.PropTypes.number.isRequired,
     onTop: React.PropTypes.bool,
     autoIncrement: React.PropTypes.bool,
-    intervalTime: React.PropTypes.number
+    intervalTime: React.PropTypes.number,
+    showSpinner: React.PropTypes.bool
   };
 
   static defaultProps = {
     percent: -1,
     onTop: false,
     autoIncrement: false,
-    intervalTime: 200
+    intervalTime: 200,
+    showSpinner: true
   };
 
   state = {
@@ -83,9 +85,13 @@ class ProgressBar extends React.Component {
     return (
       <div className={className}>
         <div className="react-progress-bar-percent" style={style}/>
-        <div className="react-progress-bar-spinner">
-          <div className="react-progress-bar-spinner-icon"/>
-        </div>
+        {
+          this.props.showSpinner ?
+            <div className="react-progress-bar-spinner">
+              <div className="react-progress-bar-spinner-icon"/>
+            </div>
+          : null
+        }
       </div>
     );
   }
