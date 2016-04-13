@@ -1,12 +1,3 @@
-@-webkit-keyframes react-progress-spinner {
-  0% {
-    -webkit-transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
 @keyframes react-progress-spinner {
   0% {
     transform: rotate(0deg);
@@ -24,7 +15,7 @@
   visibility: visible;
   opacity: 1;
   transition: all 400ms;
-  z-index: 9999999;
+  z-index: 9999;
   &.react-progress-bar-on-top {
     height: 100%;
   }
@@ -46,19 +37,25 @@
   display: block;
   position: fixed;
   top: 15px;
+}
+
+.react-progress-bar-spinner-left {
   left: 15px;
+  right: auto;
+}
+
+.react-progress-bar-spinner-right {
+  left: auto;
+  right: 15px;
 }
 
 .react-progress-bar-spinner-icon {
   width: 18px;
   height: 18px;
   box-sizing: border-box;
-
   border: solid 2px transparent;
   border-top-color: #29d;
   border-left-color: #29d;
   border-radius: 50%;
-
-  -webkit-animation: react-progress-spinner 400ms linear infinite;
   animation: react-progress-spinner 400ms linear infinite;
 }

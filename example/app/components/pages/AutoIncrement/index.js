@@ -30,7 +30,8 @@ class PageExample1 extends React.Component {
         <div>
           <ProgressBar percent={this.state.percent}
             autoIncrement={true}
-            intervalTime={this.state.intervalTime}/>
+            intervalTime={this.state.intervalTime}
+            spinner="right"/>
 
           <div className="text-center">
             <h4>
