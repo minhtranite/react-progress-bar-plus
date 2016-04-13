@@ -62,6 +62,7 @@ Example [here](http://codepen.io/vn38minhtran/pen/QjaZrm)
 | onTop | bool | false | Progress bar will ontop & height 100% |
 | autoIncrement | bool | false | if `true` percent will auto increment `Math.random() + 1 - Math.random()`% in `intervalTime` ms. |
 | intervalTime | number | 200 | Interval time for auto increment. |
+| showSpinner | bool | true | Pass `false` to hide spinner icon. |
 
 ## Example
 
