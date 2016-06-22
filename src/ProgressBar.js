@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 class ProgressBar extends React.Component {
   static propTypes = {
+    className: React.PropTypes.string,
     percent: React.PropTypes.number.isRequired,
     onTop: React.PropTypes.bool,
     autoIncrement: React.PropTypes.bool,
@@ -79,7 +80,7 @@ class ProgressBar extends React.Component {
   render() {
     let {onTop, spinner} = this.props;
     let {percent} = this.state;
-    let className = classnames('react-progress-bar', {
+    let className = classnames('react-progress-bar', this.props.className, {
       'react-progress-bar-on-top': onTop,
       'react-progress-bar-hide': percent < 0 || percent >= 100
     });
