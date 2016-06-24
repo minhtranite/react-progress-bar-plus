@@ -19,7 +19,7 @@ class PageHome extends React.Component {
     return (
       <Document title="Home | React progress bar plus" className="page-home">
         <div>
-          <ProgressBar percent={this.state.percent}/>
+          <ProgressBar className="custom-class" percent={this.state.percent}/>
           <div className="text-center">
             <div className="btn-group">
               <button className="btn btn-default" onClick={this.setPercent(0)}>

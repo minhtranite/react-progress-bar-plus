@@ -78,9 +78,9 @@ class ProgressBar extends React.Component {
   };
 
   render() {
-    let {onTop, spinner} = this.props;
+    let {onTop, spinner, className} = this.props;
     let {percent} = this.state;
-    let className = classnames('react-progress-bar', this.props.className, {
+    className = classnames('react-progress-bar', className, {
       'react-progress-bar-on-top': onTop,
       'react-progress-bar-hide': percent < 0 || percent >= 100
     });

@@ -63,6 +63,7 @@ Example [here](http://codepen.io/vn38minhtran/pen/QjaZrm)
 | autoIncrement | bool | false | if `true` percent will auto increment `Math.random() + 1 - Math.random()`% in `intervalTime` ms. |
 | intervalTime | number | 200 | Interval time for auto increment. |
 | spinner | oneOf([false, 'left', 'right'])   | left | Spinner position. Pass `false` to hide spinner icon. |
+| className | string |  | Custom class |
 
 ## Example
 
