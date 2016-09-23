@@ -2,7 +2,7 @@
 
 Progress bar component for ReactJS.
 
-[<img src="./screen-shot.png" width="100%"/>](http://vn38minhtran.github.io/react-progress-bar-plus)
+[<img src="./screen-shot.png" width="100%"/>](http://minhtranite.github.io/react-progress-bar-plus)
 
 ## Installation
 
@@ -67,7 +67,7 @@ Example [here](http://codepen.io/vn38minhtran/pen/QjaZrm)
 
 ## Example
 
-View [demo](http://vn38minhtran.github.io/react-progress-bar-plus) or example folder.
+View [demo](http://minhtranite.github.io/react-progress-bar-plus) or example folder.
 
 ## License
 
