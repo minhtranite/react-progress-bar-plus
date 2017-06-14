@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Document extends React.Component {
   static propTypes = {
-    title: React.PropTypes.string,
-    className: React.PropTypes.string,
-    children: React.PropTypes.any.isRequired
+    title: PropTypes.string.isRequired,
+    className: PropTypes.string.isRequired,
+    children: PropTypes.element.isRequired,
   };
 
   state = {
     oldTitle: document.title,
-    oldClassName: document.body.className
+    oldClassName: document.body.className,
   };
 
   componentWillMount = () => {
@@ -17,7 +18,7 @@ class Document extends React.Component {
       document.title = this.props.title;
     }
     if (this.props.className) {
-      let className = this.state.oldClassName + ' ' + this.props.className;
+      const className = `${this.state.oldClassName} ${this.props.className}`;
       document.body.className = className.trim().replace('  ', ' ');
     }
   };

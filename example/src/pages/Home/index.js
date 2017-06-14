@@ -1,5 +1,5 @@
 import React from 'react';
-import Document from 'components/common/Document';
+import Document from 'components/Document';
 import ProgressBar from 'react-progress-bar-plus';
 
 class PageHome extends React.Component {
@@ -7,12 +7,10 @@ class PageHome extends React.Component {
     percent: -1
   };
 
-  setPercent = (percent) => {
-    return () => {
-      this.setState({
-        percent: percent
-      });
-    };
+  setPercent = percent => () => {
+    this.setState({
+      percent
+    });
   };
 
   render() {
@@ -20,6 +18,7 @@ class PageHome extends React.Component {
       <Document title="Home | React progress bar plus" className="page-home">
         <div>
           <ProgressBar className="custom-class" percent={this.state.percent}/>
+          <br/>
           <div className="text-center">
             <div className="btn-group">
               <button className="btn btn-default" onClick={this.setPercent(0)}>
@@ -34,8 +33,10 @@ class PageHome extends React.Component {
               <button className="btn btn-default" onClick={this.setPercent(75)}>
                 Set 75
               </button>
-              <button className="btn btn-default"
-                onClick={this.setPercent(100)}>
+              <button
+                className="btn btn-default"
+                onClick={this.setPercent(100)}
+              >
                 Finish
               </button>
             </div>

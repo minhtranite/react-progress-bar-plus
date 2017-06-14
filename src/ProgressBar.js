@@ -13,6 +13,7 @@ class ProgressBar extends React.Component {
   };
 
   static defaultProps = {
+    className: '',
     percent: -1,
     onTop: false,
     autoIncrement: false,
@@ -48,20 +49,21 @@ class ProgressBar extends React.Component {
   };
 
   increment = () => {
-    let {percent} = this.state;
-    percent = percent + (Math.random() + 1 - Math.random());
+    let { percent } = this.state;
+    percent += ((Math.random() + 1) - Math.random());
     percent = percent < 99 ? percent : 99;
     this.setState({
-      percent: percent
+      percent
     });
   };
 
   handleProps = (props) => {
-    if (props.autoIncrement && props.percent >= 0 && props.percent < 99) {
-      this.interval = setInterval(this.increment, props.intervalTime);
+    const { autoIncrement, percent, intervalTime } = props;
+    if (autoIncrement && percent >= 0 && percent < 99) {
+      this.interval = setInterval(this.increment, intervalTime);
     }
 
-    if (props.percent >= 100) {
+    if (percent >= 100) {
       this.setState({
         percent: 99.9
       }, () => {
@@ -73,20 +75,21 @@ class ProgressBar extends React.Component {
       });
     } else {
       this.setState({
-        percent: props.percent
+        percent
       });
     }
   };
 
   render() {
-    let {onTop, spinner, className} = this.props;
-    let {percent} = this.state;
+    const { onTop, spinner } = this.props;
+    let { className } = this.props;
+    const { percent } = this.state;
     className = classnames('react-progress-bar', className, {
       'react-progress-bar-on-top': onTop,
       'react-progress-bar-hide': percent < 0 || percent >= 100
     });
-    let style = {width: (percent < 0 ? 0 : percent) + '%'};
-    let spinnerClassName = classnames('react-progress-bar-spinner', {
+    const style = { width: `${percent < 0 ? 0 : percent}%` };
+    const spinnerClassName = classnames('react-progress-bar-spinner', {
       [`react-progress-bar-spinner-${spinner}`]: spinner
     });
     return (
