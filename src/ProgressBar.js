@@ -1,14 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 class ProgressBar extends React.Component {
   static propTypes = {
-    className: React.PropTypes.string,
-    percent: React.PropTypes.number.isRequired,
-    onTop: React.PropTypes.bool,
-    autoIncrement: React.PropTypes.bool,
-    intervalTime: React.PropTypes.number,
-    spinner: React.PropTypes.oneOf([false, 'left', 'right'])
+    className: PropTypes.string,
+    percent: PropTypes.number.isRequired,
+    onTop: PropTypes.bool,
+    autoIncrement: PropTypes.bool,
+    intervalTime: PropTypes.number,
+    spinner: PropTypes.oneOf([false, 'left', 'right'])
   };
 
   static defaultProps = {
