@@ -51,7 +51,7 @@ require('react-progress-bar-plus/lib/progress-bar.css');
 const ProgressBar = window.ReactProgressBarPlus;
 ```
 
-Example [here](http://codepen.io/vn38minhtran/pen/QjaZrm)
+Example [here](http://codepen.io/minhtranite/pen/QjaZrm)
 
 ## Props
 | Name | Type | Default | Description |
