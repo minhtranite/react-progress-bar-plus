@@ -21,7 +21,7 @@ bower install --save react-progress-bar-plus
 ### JS
 
 ```js
-var ProgressBar = require('react-progress-bar-plus');
+const ProgressBar = require('react-progress-bar-plus');
 
 <ProgressBar percent={10}/>
 ```
@@ -43,14 +43,12 @@ require('react-progress-bar-plus/lib/progress-bar.css');
 ### UMD
 
 ```html
-<link rel="stylesheet" type="text/css" href="path/to/react-progress-bar-plus/dist/progress-bar.css">
+<link rel="stylesheet" type="text/css" href="path/to/react-progress-bar-plus/dist/react-progress-bar-plus.css">
 <script src="path/to/react-progress-bar-plus/dist/react-progress-bar-plus.js"></script>
 ```
 
 ```js
-...
-var ProgressBar = window.ReactProgressBarPlus;
-...
+const ProgressBar = window.ReactProgressBarPlus;
 ```
 
 Example [here](http://codepen.io/vn38minhtran/pen/QjaZrm)
