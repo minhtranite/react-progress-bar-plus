@@ -17,7 +17,7 @@
     "react-progress-bar-plus"
   ],
   "peerDependencies": {
-    "react": "^0.13 || ^0.14 || ^15.0.0"
+    "react": "^0.13 || ^0.14 || ^15.0.0 || ^16.0.0"
   },
   "dependencies": {
     "classnames": "^2.1.5",
