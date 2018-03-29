@@ -12,11 +12,12 @@
     "import/no-unresolved": "off",
     "import/extensions": "off",
     "react/jsx-filename-extension": "off",
-    "react/prefer-stateless-function": ["error", {"ignorePureComponents": true}],
+    "react/prefer-stateless-function": ["error", { "ignorePureComponents": true }],
     "react/jsx-tag-spacing": "off",
     "react/forbid-prop-types": "off",
     "react/no-array-index-key": "off",
-    "jsx-a11y/no-static-element-interactions": "off"
+    "jsx-a11y/no-static-element-interactions": "off",
+    "react/no-unused-prop-types": "off"
   },
   "globals": {
     "jQuery": false,
